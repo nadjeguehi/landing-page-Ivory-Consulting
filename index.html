@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ivory Consulting | Neuro-Performance & Stratégie Digitale Guadeloupe</title>
+    <meta name="description" content="Expert en neuro-performance, SEO et management au Gosier. Transformez vos avis Google en clients et optimisez votre QVT avec Nadjé GUEHI.">
+    
+    <!-- Polices Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #0B1020;
+            --bg-card: #141A2E;
+            --text-main: #F7F3E9;
+            --text-muted: #B4B9C7;
+            --gold: #CFA94A;
+            --gold-hover: #E3BE5E;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Inter', sans-serif;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+        
+        /* Typography */
+        h1, h2, h3 { font-family: var(--font-serif); }
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 1.5rem; }
+        h2 { font-size: 2.5rem; text-align: center; margin-bottom: 3rem; color: var(--gold); }
+        .text-gold { color: var(--gold); }
+
+        /* Navigation */
+        nav { padding: 25px 0; border-bottom: 1px solid rgba(247, 243, 233, 0.05); background: rgba(11, 16, 32, 0.8); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { height: 50px; width: auto; transition: var(--transition); }
+        .logo:hover { transform: scale(1.05); }
+
+        /* Hero Section */
+        .hero { padding: 80px 0; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
+        .hero-text p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 2.5rem; max-width: 600px; }
+        .hero-img-container { position: relative; }
+        .hero-img-container::after { content: ''; position: absolute; top: 20px; left: 20px; right: -20px; bottom: -20px; border: 2px solid var(--gold); border-radius: 8px; z-index: -1; }
+        .hero-img-container img { width: 100%; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+
+        /* Buttons */
+        .btn { display: inline-block; padding: 18px 35px; border-radius: 4px; font-weight: 700; text-decoration: none; transition: var(--transition); cursor: pointer; border: none; font-size: 1rem; }
+        .btn-gold { background: var(--gold); color: var(--bg-dark); }
+        .btn-gold:hover { background: var(--gold-hover); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(207, 169, 74, 0.3); }
+
+        /* Presentation Section */
+        .presentation { background: var(--bg-card); padding: 100px 0; }
+        .pres-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 80px; align-items: center; }
+        .pres-img img { width: 100%; border-radius: 50% 50% 0 0; border: 4px solid var(--gold); background: var(--bg-dark); }
+        .pres-content h3 { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-bottom: 1rem; font-family: var(--font-sans); }
+
+        /* Features/Services */
+        .services { padding: 100px 0; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { background: rgba(20, 26, 46, 0.5); padding: 40px; border-radius: 8px; border: 1px solid rgba(207, 169, 74, 0.1); transition: var(--transition); }
+        .service-card:hover { border-color: var(--gold); transform: translateY(-10px); background: var(--bg-card); }
+        .service-card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 20px; }
+
+        /* Contact/Footer CTA */
+        .cta-section { 
+            position: relative;
+            padding: 120px 0;
+            background: url('./image/Photo3LP.jpg') center/cover no-repeat fixed;
+            text-align: center;
+        }
+        .cta-section::before { content: ''; position: absolute; inset: 0; background: rgba(11, 16, 32, 0.85); }
+        .cta-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+        .cta-content h2 { color: var(--text-main); margin-bottom: 1rem; }
+
+        footer { padding: 60px 0 30px; border-top: 1px solid rgba(247, 243, 233, 0.05); font-size: 0.9rem; color: var(--text-muted); }
+        .footer-bottom { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(247, 243, 233, 0.05); }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero, .pres-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-text p { margin-left: auto; margin-right: auto; }
+            .hero-img-container { max-width: 500px; margin: 0 auto; }
+            .pres-img { max-width: 400px; margin: 0 auto; }
+            .hero-img-container::after { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-content">
+            <img src="./image/logo.png" alt="Ivory Consulting Logo - Nadjé GUEHI" class="logo">
+            <a href="https://calendly.com/guehinadje-ivoryconsulting/15min" target="_blank" class="btn btn-gold" style="padding: 10px 20px; font-size: 0.8rem;">CONSULTATION OFFERTE</a>
+        </div>
+    </nav>
+
+    <section class="container hero">
+        <div class="hero-text">
+            <h1>Libérez le potentiel de votre <span class="text-gold">performance commerciale</span></h1>
+            <p>Spécialiste en Neuromanagement et SEO local. J'accompagne les entreprises de Guadeloupe à dominer leur marché grâce aux neurosciences.</p>
+            <a href="https://calendly.com/guehinadje-ivoryconsulting/15min" target="_blank" class="btn btn-gold">DÉMARRER MON AUDIT EXPRESS</a>
+        </div>
+        <div class="hero-img-container">
+            <img src="./image/PhotoLPAction.jpg" alt="Nadjé GUEHI en session de consulting stratégique en Guadeloupe">
+        </div>
+    </section>
+
+    <section class="presentation">
+        <div class="container pres-grid">
+            <div class="pres-img">
+                <img src="./image/PhotoPortraitNadje.jpg" alt="Portrait de Nadjé GUEHI - Expert Chèque TIC et Neuro-Performance">
+            </div>
+            <div class="pres-content">
+                <h3>À propos de votre partenaire</h3>
+                <h2>Expert régional Chèque TIC au service de votre croissance</h2>
+                <p>Ancien Directeur Régional avec plus de 20 ans d'expérience, j'allie la rigueur du terrain à la puissance des neurosciences pour transformer votre organisation.</p>
+                <div style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div><strong><i class="fa-solid fa-check text-gold"></i> SEO & GMB</strong></div>
+                    <div><strong><i class="fa-solid fa-check text-gold"></i> Neuro-Vente</strong></div>
+                    <div><strong><i class="fa-solid fa-check text-gold"></i> Copywriting</strong></div>
+                    <div><strong><i class="fa-solid fa-check text-gold"></i> Management</strong></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container services">
+        <h2>Une approche scientifique du business</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-brain"></i>
+                <h3>Neuromanagement</h3>
+                <p>Améliorez la QVT et l'engagement de vos équipes en comprenant les mécanismes cérébraux de la motivation.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                <h3>SEO Local & Avis</h3>
+                <p>Optimisez votre visibilité au Gosier et partout en Guadeloupe. Transformez vos avis Google en une machine à prospects.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-pen-nib"></i>
+                <h3>Ghostwriting LinkedIn</h3>
+                <p>Devenez une autorité sur votre secteur avec des publications qui déclenchent l'algorithme et l'engagement.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Prêt à passer au niveau supérieur ?</h2>
+            <p style="margin-bottom: 30px;">Réservez une session de diagnostic de 15 minutes pour identifier vos leviers de croissance immédiats.</p>
+            <a href="https://calendly.com/guehinadje-ivoryconsulting/15min" target="_blank" class="btn btn-gold">RÉSERVER MON CRÉNEAU</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
+            <div>
+                <img src="./image/logo.png" alt="Logo Ivory" style="height: 40px; margin-bottom: 10px;">
+                <p>Expertise Neuro-Performance & Digital</p>
+            </div>
+            <div style="text-align: right;">
+                <p><i class="fa-solid fa-location-dot"></i> Le Gosier, Guadeloupe</p>
+                <p><i class="fa-solid fa-envelope"></i> contact@ivoryconsulting.fr</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ivory Consulting. Tous droits réservés. <a href="#" style="color: inherit; margin-left: 15px;">Mentions Légales</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
